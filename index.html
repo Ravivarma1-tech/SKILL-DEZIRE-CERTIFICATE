@@ -1,79 +1,48 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificate Verification</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Verification</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>Certificate Verification Portal</h1>
-    <p>Verify your certificate details</p>
-</header>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="SkillDzire">
+        <img src="assets/skilldzire-logo.png" alt="SkillDzire">
+      </a>
+      <a class="login" href="#">Login</a>
+    </div>
+  </header>
 
-<div class="container">
-    <h2>Certificate Verification</h2>
+  <main class="verification-main">
+    <section class="verification-content" aria-labelledby="page-title">
 
-    <input type="text" id="certificateId"
-           placeholder="Enter Certificate ID">
+      <h1 id="page-title">Certificate Verification</h1>
 
-    <button onclick="verifyCertificate()">
-        Verify Certificate
-    </button>
+      <div class="certificate-info">
+        <p><strong>Certificate ID:</strong> <span>2n5k5qescp</span></p>
 
-    <div id="result"></div>
-</div>
+        <p><strong>Student Name:</strong> <span>MUPPANA ROHITH SAI REDDY</span></p>
 
-<footer>
-    <p>Certificate Verification Portal</p>
-</footer>
+        <p><strong>Course Name:</strong> <span>Generative AI with LLMs</span></p>
+        
+        <p><strong>Issue Date:</strong> <span>2026-07-10</span></p>
+      </div>
 
-<script>
-const certificates = {
-    "1001": {
-        name: "Student One",
-        course: "Python Programming",
-        date: "17 November 2026",
-        issuer: "Your Organization"
-    },
-    "1002": {
-        name: "Student Two",
-        course: "Web Development",
-        date: "17 November 2026",
-        issuer: "Your Organization"
-    }
-};
+      <p class="valid">
+        <span class="valid-icon">✓</span>
+        <span>This certificate is <strong>valid.</strong></span>
+      </p>
 
-function verifyCertificate() {
-    const id = document.getElementById("certificateId").value.trim();
-    const student = certificates[id];
-    const result = document.getElementById("result");
+    </section>
+  </main>
 
-    if (student) {
-        result.innerHTML = `
-            <h3>Certificate Found</h3>
-            <p><b>Certificate ID:</b> ${id}</p>
-            <p><b>Name:</b> ${student.name}</p>
-            <p><b>Course:</b> ${student.course}</p>
-            <p><b>Date:</b> ${student.date}</p>
-            <p><b>Issuer:</b> ${student.issuer}</p>
-        `;
-    } else {
-        result.innerHTML = "<h3>Certificate Not Found</h3>";
-    }
-}
-
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
-
-if (id) {
-    document.getElementById("certificateId").value = id;
-    verifyCertificate();
-}
-</script>
+  <footer class="site-footer">
+    SkillDzire Technologies Private Limited
+  </footer>
 
 </body>
 </html>
