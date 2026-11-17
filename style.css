@@ -1,64 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
 }
 
 body {
+  min-height: 100vh;
+  background: #fff;
+  color: #3f3f3f;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HEADER
+   Reference: 1882 x 866
+   Header height ≈ 69px
+   ========================= */
+
+.site-header {
+  width: 100%;
+  height: 7.97vh;
+  min-height: 58px;
+  border-bottom: 1px solid #dedede;
+  background: #fff;
+}
+
+.header-inner {
+  width: 86.7%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: block;
+  width: 77px;
+  line-height: 0;
+}
+
+.brand img {
+  display: block;
+  width: 77px;
+  height: auto;
+}
+
+.login {
+  color: #222;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+/* =========================
+   MAIN AREA
+   Border in reference is
+   ≈ 81.1% of viewport height
+   ========================= */
+
+.verification-main {
+  height: 73.1vh;
+  min-height: 530px;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #fff;
+}
+
+.verification-content {
+  width: 100%;
+  text-align: center;
+  padding-top: 19.7vh;
+}
+
+.verification-content h1 {
+  color: #050505;
+  font-size: clamp(48px, 4.25vw, 80px);
+  line-height: 1.12;
+  font-weight: 500;
+  letter-spacing: -2.8px;
+}
+
+/* =========================
+   DETAILS
+   ========================= */
+
+.certificate-info {
+  margin-top: 2.85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.45vh;
+}
+
+.certificate-info p {
+  color: #414141;
+  font-size: clamp(14px, 1.06vw, 20px);
+  line-height: 2.45;
+  font-weight: 400;
+}
+
+.certificate-info strong {
+  font-weight: 700;
+}
+
+.certificate-info span {
+  font-weight: 400;
+}
+
+/* =========================
+   VALID MESSAGE
+   ========================= */
+
+.valid {
+  margin-top: 4.9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  color: #404040;
+  font-size: clamp(14px, 1.06vw, 20px);
+  line-height: 1.4;
+}
+
+.valid strong {
+  color: #087d12;
+  font-weight: 700;
+}
+
+.valid-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  background: #48c878;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+  height: 18.9vh;
+  min-height: 125px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 6.6% 1.9vh;
+  background: #fff;
+  color: #777;
+  font-size: clamp(14px, 1.06vw, 20px);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 900px) {
+  .header-inner {
+    width: 90%;
+  }
+
+  .brand,
+  .brand img {
+    width: 72px;
+  }
+
+  .login {
+    font-size: 18px;
+  }
+
+  .verification-content {
+    padding-top: 17vh;
+  }
+
+  .verification-content h1 {
+    font-size: clamp(42px, 6.2vw, 64px);
+    letter-spacing: -2px;
+  }
+
+  .certificate-info {
+    gap: 20px;
+  }
+
+  .certificate-info p,
+  .valid,
+  .site-footer {
+    font-size: 17px;
+  }
+
+  .site-footer {
+    padding-right: 5%;
+  }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+  .site-header {
+    height: 68px;
+    min-height: 68px;
+  }
+
+  .header-inner {
+    width: 90%;
+  }
+
+  .brand,
+  .brand img {
+    width: 70px;
+  }
+
+  .login {
+    font-size: 17px;
+  }
+
+  .verification-main {
+    height: calc(100vh - 68px - 125px);
+    min-height: 520px;
+  }
+
+  .verification-content {
+    padding: 110px 18px 0;
+  }
+
+  .verification-content h1 {
+    font-size: clamp(36px, 10.2vw, 52px);
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+  }
+
+  .certificate-info {
+    margin-top: 34px;
+    gap: 23px;
+  }
+
+  .certificate-info p {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .valid {
+    margin-top: 42px;
+    font-size: 15px;
+  }
+
+  .valid-icon {
+    width: 19px;
+    height: 19px;
+    font-size: 14px;
+  }
+
+  .site-footer {
+    height: 125px;
+    min-height: 125px;
+    padding: 0 18px 18px;
+    font-size: 13px;
+    text-align: right;
+  }
+}
+
+/* =========================
+   SMALL PHONES
+   ========================= */
+
+@media (max-width: 400px) {
+  .verification-content {
+    padding-top: 92px;
+  }
+
+  .verification-content h1 {
+    font-size: 34px;
+  }
+
+  .certificate-info {
+    margin-top: 28px;
+    gap: 20px;
+  }
+
+  .certificate-info p {
+    font-size: 13px;
+  }
+
+  .valid {
+    margin-top: 35px;
+    font-size: 13px;
+  }
+
+  .site-footer {
+    font-size: 11px;
+  }
+}
+
+/* =========================
+   SHORT DESKTOP SCREENS
+   Prevent content from
+   being pushed below viewport
+   ========================= */
+
+@media (min-width: 601px) and (max-height: 760px) {
+  .verification-main {
+    min-height: 0;
+  }
+
+  .verification-content {
+    padding-top: 15vh;
+  }
+
+  .certificate-info {
+    gap: 1.8vh;
+    margin-top: 2vh;
+  }
+
+  .valid {
+    margin-top: 3.2vh;
+  }
+
+  .site-footer {
+    min-height: 95px;
+  }
+}
+
+/* =========================
+   PRINT
+   ========================= */
+
+@media print {
+  @page {
+    size: landscape;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    color: #222;
-}
+  }
 
-header {
-    background: #142b4a;
-    color: white;
-    padding: 22px;
-    text-align: center;
-}
+  body {
+    min-height: 100vh;
+  }
 
-.container {
-    max-width: 650px;
-    margin: 50px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px #0002;
-}
-
-h2 {
-    text-align: center;
-    color: #142b4a;
-}
-
-input, button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 12px;
-    font-size: 16px;
-}
-
-button {
-    background: #142b4a;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#result {
-    margin-top: 25px;
-    line-height: 1.8;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #666;
-}
-
-@media (max-width: 700px) {
-    .container {
-        margin: 25px 15px;
-    }
+  .site-header,
+  .verification-main,
+  .site-footer {
+    break-inside: avoid;
+  }
 }
